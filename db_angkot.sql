@@ -15,6 +15,25 @@ Date: 2022-05-21 22:46:57
 
 SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
+-- Table structure for `user`
+-- ----------------------------
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id_user` int(11) NOT NULL AUTO_INCREMENT,
+  `nama` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `tgl_lahir` date DEFAULT NULL,
+  `username` varchar(255) DEFAULT NULL,
+  `password` varchar(255) DEFAULT NULL,
+  `no_telp` varchar(13) DEFAULT NULL,
+  PRIMARY KEY (`id_user`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ----------------------------
+-- Records of user
+-- ----------------------------
+
+-- ----------------------------
 -- Table structure for `alamat`
 -- ----------------------------
 DROP TABLE IF EXISTS `alamat`;
@@ -46,24 +65,6 @@ CREATE TABLE `halte` (
 
 -- ----------------------------
 -- Records of halte
--- ----------------------------
-
--- ----------------------------
--- Table structure for `jalur_rute`
--- ----------------------------
-DROP TABLE IF EXISTS `jalur_rute`;
-CREATE TABLE `jalur_rute` (
-  `id_trayek` int(11) DEFAULT NULL,
-  `id_halte` int(11) DEFAULT NULL,
-  `urutan_jalur` int(11) DEFAULT NULL,
-  KEY `jalur_rute` (`id_trayek`),
-  KEY `jalur_rutee` (`id_halte`),
-  CONSTRAINT `jalur_rute` FOREIGN KEY (`id_trayek`) REFERENCES `trayek` (`id_trayek`),
-  CONSTRAINT `jalur_rutee` FOREIGN KEY (`id_halte`) REFERENCES `halte` (`id_halte`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- ----------------------------
--- Records of jalur_rute
 -- ----------------------------
 
 -- ----------------------------
@@ -104,20 +105,19 @@ CREATE TABLE `trayek` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for `user`
+-- Table structure for `jalur_rute`
 -- ----------------------------
-DROP TABLE IF EXISTS `user`;
-CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL AUTO_INCREMENT,
-  `nama` varchar(255) DEFAULT NULL,
-  `email` varchar(255) DEFAULT NULL,
-  `tgl_lahir` date DEFAULT NULL,
-  `username` varchar(255) DEFAULT NULL,
-  `password` varchar(255) DEFAULT NULL,
-  `no_telp` varchar(13) DEFAULT NULL,
-  PRIMARY KEY (`id_user`)
+DROP TABLE IF EXISTS `jalur_rute`;
+CREATE TABLE `jalur_rute` (
+  `id_trayek` int(11) DEFAULT NULL,
+  `id_halte` int(11) DEFAULT NULL,
+  `urutan_jalur` int(11) DEFAULT NULL,
+  KEY `jalur_rute` (`id_trayek`),
+  KEY `jalur_rutee` (`id_halte`),
+  CONSTRAINT `jalur_rute` FOREIGN KEY (`id_trayek`) REFERENCES `trayek` (`id_trayek`),
+  CONSTRAINT `jalur_rutee` FOREIGN KEY (`id_halte`) REFERENCES `halte` (`id_halte`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
--- Records of user
+-- Records of jalur_rute
 -- ----------------------------
