@@ -40,17 +40,17 @@ mysqli_close($conn);
             <h5><?= $data['jurusan'] ?></h5>
         </div>
 
-        <input type="text" id="from" value="terminal ledeng" hidden><!-- explode('-', $data['jurusan'])[0] -->
-        <input type="text" id="to" value="terminal cicaheum" hidden>
+        <input type="text" id="from" value="<?= $data['koordinat_awal'] ?>" hidden> <!-- explode('-', $data['jurusan'])[0] -->
+        <input type="text" id="to" value="<?= $data['koordinat_akhir'] ?>" hidden>
         <button id="btn_submit" type="submit" hidden>Submit</button>
 
     </div>
 
-        <div id="map" style="height: 50%">
-        </div>
+    <div id="map" style="height: 50%">
+    </div>
 
     <div class="mainContent container-fluid">
-        
+
         <div class="row mt-4">
             <div class="col-6">
                 <div class="text-center bg-primary">gambar</div>
