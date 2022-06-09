@@ -32,7 +32,9 @@ mysqli_close($conn);
         <div class="list-group">
             <?php foreach ($list as $data) { ?>
                 <a href="detail_rute.php?id=<?= $data['id_rute'] ?>" class="list-group-item list-group-item-action d-flex">
-                    <img src="https://getbootstrap.com/docs/4.6/assets/brand/bootstrap-solid.svg" width="30" height="30" class="mr-2 my-auto" alt="">
+                    <div class="rounded justify-content-center d-flex mr-2 border border-dark" style="background-color: <?= $data["warna"] ?>; width:30px; height:30px">
+                        <p class="font-weight-bold text-white" style="-webkit-text-stroke: 0.5px black;"> <?= $data['kode'] ?> </p>
+                    </div>
                     <?= $data['jurusan'] ?>
                 </a>
             <?php } ?>
