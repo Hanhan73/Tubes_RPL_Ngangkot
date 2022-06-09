@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ngangkot</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link stylesheet type="text/css" rel="stylesheet" href="css/style.css">
 </head>
 
@@ -40,13 +42,21 @@
         </button>
         <div class="collapse mb-2" id="collapseExample">
             <div class="card card-body text-center">
-                <p>Jurusan:</p>
-                <p>Abdul Muis (Kebon Kalapa) - Cicaheum (via Binong)</p>
-                <p>(kode)</p>
-                <br>
-                <p>Tarif:</p>
-                <p>Rp 50.000</p>
+                <i class="fa fa-money" aria-hidden="true"></i>
+                <h5 class="font-weight-bold"><i class="fa-solid fa-money-bill"></i> Harga ongkos:
+                </h5>
+                <span id="ongkos" class="font-weight-normal"></span>
+
+                <h5 class="font-weight-bold"><i class="fa-solid fa-road"></i> Jarak yang ditempuh:
+                </h5>
+                <span id="jarak" class="font-weight-normal"></span>
+
+                <h5 class="font-weight-bold"><i class="fa-solid fa-clock"></i> Estimasi waktu:
+                </h5>
+                <span id="waktu" class="font-weight-normal"></span>
+
             </div>
+
         </div>
     </div>
 
@@ -56,11 +66,11 @@
     ?>
 
     <!-- JS bootstrap -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
     <!-- include map API dan script-nya -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuCoZnwt2CWIp1ri_cZrxOBe-V21R0LAE&callback=initMap&libraries=places" async defer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuCoZnwt2CWIp1ri_cZrxOBe-V21R0LAE&callback=initMap&libraries=places&language=id&region=id" async defer>
     </script>
     <script src="app.js"></script>
 

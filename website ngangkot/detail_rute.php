@@ -43,25 +43,24 @@ mysqli_close($conn);
         <input type="text" id="from" value="<?= $data['koordinat_awal'] ?>" hidden> <!-- explode('-', $data['jurusan'])[0] -->
         <input type="text" id="to" value="<?= $data['koordinat_akhir'] ?>" hidden>
         <button id="btn_submit" type="submit" hidden>Submit</button>
-
     </div>
 
-    <div id="map" style="height: 50%">
-    </div>
+    <div id="map" style="height: 50%"></div>
+
 
     <div class="mainContent container-fluid">
 
-        <div class="row mt-4">
-            <div class="col-6">
-                <div class="text-center bg-primary">gambar</div>
-                <div class="text-center bg-primary">gambar</div>
-                <div class="text-center bg-primary">gambar</div>
-                <div class="text-center bg-primary">gambar</div>
-            </div>
-            <div class="col-6">
-                <p>Kode angkot: <?= $data['kode'] ?></p>
-                <p>Kisaran tarif: <?= $data['harga'] ?></p>
-                <p>Jam operasional: <?= $data['jam_opr_awal'] ?> - <?= $data['jam_opr_akhir'] ?></p>
+        <div class="row d-flex flex-column justify-content-center">
+            <div class="d-flex flex-row justify-content-center">
+
+                <div class="col-md-2">
+                    <center><img width="300px" height="300px" src="aset/Gambar Angkot/<?= $data['id_rute'] ?>.jpg" alt="<?= $data['jurusan'] ?>" class="img-fluid img-thumbnail"></center>
+                </div>
+                <div class="col-md-4 px-5 text-center">
+                    <h5 class="font-weight-bold">Kode angkot: <?= $data['kode'] ?></h5>
+                    <h5 class="font-weight-bold">Kisaran tarif: <?= $data['harga'] ?></h5>
+                    <h5 class="font-weight-bold">Jam operasional: <?= $data['jam_opr_awal'] ?> - <?= $data['jam_opr_akhir'] ?></h5>
+                </div>
             </div>
         </div>
 
@@ -77,7 +76,7 @@ mysqli_close($conn);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
 
     <!-- include map API dan script-nya -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuCoZnwt2CWIp1ri_cZrxOBe-V21R0LAE&callback=initMap&libraries=places" async defer>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuCoZnwt2CWIp1ri_cZrxOBe-V21R0LAE&callback=initMap&libraries=places&language=id&region=id" async defer>
     </script>
     <script src="app.js"></script>
 
